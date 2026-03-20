@@ -18,6 +18,7 @@ class AbstracModel(models.Model):
     class Meta:
         abstract = True
 
+
 User = get_user_model()
 
 

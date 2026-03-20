@@ -17,7 +17,6 @@ def index(request):
         '-pub_date'
     )[0:5]
 
-    
     context = {
         'post_list': post_list
     }
