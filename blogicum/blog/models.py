@@ -97,4 +97,3 @@ class Post(AbstracModel):
     class Meta:
         verbose_name = 'публикация'
         verbose_name_plural = 'Публикации'
-

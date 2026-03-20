@@ -1,5 +1,4 @@
 from django.shortcuts import render, get_object_or_404
-from django.db.models import Q
 
 from datetime import datetime
 
@@ -18,6 +17,7 @@ def index(request):
         '-pub_date'
     )[0:5]
 
+    
     context = {
         'post_list': post_list
     }
@@ -34,7 +34,7 @@ def post_detail(request, id):
         category__is_published=True
     )
     post = get_object_or_404(user_post, pk=id)
-    
+
     context = {
         'post': post
     }
