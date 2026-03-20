@@ -5,17 +5,21 @@ from datetime import datetime
 from .models import Post, Category
 
 
-def index(request):
-    template_name = 'blog/index.html'
+def filter_posts():
     post_list = Post.objects.select_related(
         'category'
     ).filter(
         is_published=True,
         category__is_published=True,
         pub_date__lte=datetime.now()
-    ).order_by(
-        '-pub_date'
     )[0:5]
+
+    return post_list
+
+
+def index(request):
+    template_name = 'blog/index.html'
+    post_list = filter_posts()
 
     context = {
         'post_list': post_list
