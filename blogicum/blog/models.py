@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth import get_user_model
 
 
+
 class AbstracModel(models.Model):
     is_published = models.BooleanField(
         blank=False,

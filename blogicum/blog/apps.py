@@ -7,3 +7,4 @@ class BlogConfig(AppConfig):
     verbose_name = 'Блог'
 
 
+
